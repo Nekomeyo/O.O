@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navig"
+    app:startDestination="@id/loginActivity">
+
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="pl.wsiz.okanizator.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login">
+        <action
+            android:id="@+id/login "
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_loginActivity_to_registerActivity"
+            app:destination="@id/registerActivity" />
+    </activity>
+    <activity
+        android:id="@+id/registerActivity"
+        android:name="pl.wsiz.okanizator.RegisterActivity"
+        android:label="activity_register"
+        tools:layout="@layout/activity_register" >
+        <action
+            android:id="@+id/action_registerActivity_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </activity>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="pl.wsiz.okanizator.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/app_bar_main">
+        <action
+            android:id="@+id/action_mainActivity_to_doneFragment"
+            app:destination="@id/doneFragment" />
+        <action
+            android:id="@+id/action_mainActivity_to_inprogressFragment"
+            app:destination="@id/inprogressFragment" />
+        <action
+            android:id="@+id/action_mainActivity_to_todoFragment"
+            app:destination="@id/todoFragment" />
+        <action
+            android:id="@+id/action_mainActivity_to_newActivity"
+            app:destination="@id/newActivity" />
+    </activity>
+    <fragment
+        android:id="@+id/doneFragment"
+        android:name="pl.wsiz.okanizator.DoneFragment"
+        android:label="fragment_done"
+        tools:layout="@layout/fragment_done" />
+    <fragment
+        android:id="@+id/todoFragment"
+        android:name="pl.wsiz.okanizator.TodoFragment"
+        android:label="fragment_todo"
+        tools:layout="@layout/fragment_todo" />
+    <fragment
+        android:id="@+id/inprogressFragment"
+        android:name="pl.wsiz.okanizator.InprogressFragment"
+        android:label="fragment_inprogress"
+        tools:layout="@layout/fragment_inprogress" />
+    <activity
+        android:id="@+id/newActivity"
+        android:name="pl.wsiz.okanizator.NewActivity"
+        android:label="activity_new" />
+</navigation>
